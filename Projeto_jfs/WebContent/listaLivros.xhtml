@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html mlns="http://www.w3.opr/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta charset="ISO-8859-1"></meta>
+<title>Lista de livros</title>
+</h:head>
+<h:body>
+        <h:dataTable value="#{beanLivro.listaLivros}" var="livro">
+
+        <h:column>
+           <f:facet name="header">ID</f:facet>
+           <h:outputText value="#{livro.id}"/>
+        </h:column>
+
+        <h:column>
+           <f:facet name="header">TITULO</f:facet>
+           <h:outputText value="#{livro.titulo}"/>
+        </h:column>
+        <h:column>
+           <f:facet name="header">AUTOR</f:facet>
+           <h:outputText value="#{livro.autor}"/>
+        </h:column>
+        <h:column>
+           <f:facet name="header">DATA</f:facet>
+           <h:outputText value="#{livro.dataPublicacao}">
+              <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+           </h:outputText>   
+        </h:column>
+        
+        <h:column>
+           <f:facet name="header">PRECO</f:facet>
+           <h:outputText value="#{livro.preco}">
+            <f:convertNumber type="currency"></f:convertNumber>
+           </h:outputText>
+        </h:column>
+        
+        </h:dataTable>
+</h:body>
+</html>

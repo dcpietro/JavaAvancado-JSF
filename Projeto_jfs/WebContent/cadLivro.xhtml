@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.opr/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">   
+<h:head>
+<meta charset="ISO-8859-1"></meta>
+<title>Cadastro de Livros</title>
+
+</h:head>
+
+<h:body>
+    <h:form>
+    <h:outputText value="Titulo:"/> <br/>
+    <h:inputText value="#{beanLivro.livro.titulo}" /> <br/> 
+    
+    <h:outputText value="Autor:"/> <br/>
+    <h:inputText value="#{beanLivro.livro.autor}" /> <br/>
+     
+    <h:outputText value="Data Pub.:"/> <br/>
+    <h:inputText value="#{beanLivro.livro.dataPublicacao}">
+       <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+     </h:inputText> <br/>
+     
+    <h:outputText value="Preco:"/> <br/>
+    <h:inputText value="#{beanLivro.livro.preco}" /> <br/>
+    
+    <h:commandButton value="incluir Livros" action="#{beanLivro.incluirLivro()}"/>
+     <br/>
+    
+    <h:outputLink value="listaLivros.faces">Listar livros</h:outputLink>
+     
+    </h:form>
+</h:body>
+
+</html>
